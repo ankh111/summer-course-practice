@@ -24,7 +24,7 @@ const TabOptions: {
 
 export default function Root() {
   const location = useLocation();
-  const apiKey = '/api' + location.pathname
+  const apiKey = TabOptions.find(item => item.path === location.pathname)?.api
   const { data, isValidating } = useSWR(apiKey)
   const { mutate } = useSWRConfig()
 

@@ -4,7 +4,7 @@ import BaiduHotSearchItem, { BaiduHotSearchItemPlaceholder } from "./BaiduHotSea
 import { Seo } from "../Seo"
 
 export default function Baidu() {
-  const { data, isLoading } = useSWR('/api/baidu', getBaiduHotSearch)
+  const { data, isLoading } = useSWR('/api/baidu', getBaiduHotSearch);
 
   return (
     <div>

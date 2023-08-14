@@ -7,7 +7,7 @@ export default function BaiduHotSearchItem({
   item: BaiduHotSearchContent;
 }) {
   return (
-    <div className="w-full font-light flex gap-6 p-3 hover:bg-gradient-to-b from-gray-100 to-white items-center">
+    <div className="w-full flex gap-6 p-3 hover:bg-gradient-to-b from-gray-100 to-white">
       <a className="w-[128px] h-[85px] overflow-hidden rounded-xl relative" href={item.url} target="_blank">
         <img
           className="w-full h-full object-cover"
@@ -22,16 +22,18 @@ export default function BaiduHotSearchItem({
       </a>
       <div className="flex-1">
         <div
-          className="text-lg mb-2 font-semibold cursor-pointer overflow-ellipsis overflow-hidden hover:text-blue-500"
+          className="my-2 flex items-center gap-2 font-semibold cursor-pointer overflow-ellipsis overflow-hidden hover:text-blue-500"
           onClick={() => window.open(item.url)}
-        >{item.word}</div>
+        >
+          {item.word} {item.hotTag === '3' && <div className="bg-orange-400 rounded leading-5 font-light text-white w-5 h-5 text-xs text-center">热</div>}
+        </div>
         <div className="text-gray-600 text-sm">
           {item.desc}
         </div>
       </div>
-      <div className="text-center w-[150px] text-gray-400 text-sm  border-l-gray-100 border-l-2">
-        <div className="mb-2">{item.hotScore}</div>
-        <div>热搜指数</div>
+      <div className="text-center pt-4 w-[150px]  text-sm border-l-gray-100 border-l-2">
+        <div className="mb-2 text-gray-500">{item.hotScore}</div>
+        <div className="text-gray-400">热搜指数</div>
       </div>
     </div>
   )
