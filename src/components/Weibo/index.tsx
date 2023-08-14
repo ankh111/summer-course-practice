@@ -4,7 +4,7 @@ import WeiboHotSearchItem, { HotSearchItemPlaceHolder } from "./WeiboHotSearchIt
 import { Seo } from "../Seo"
 
 export default function Weibo() {
-  const { data, isValidating } = useSWR('/api/weibo', getWeboHotSearch)
+  const { data, isLoading } = useSWR('/api/weibo', getWeboHotSearch)
 
   return (
     <>
@@ -15,7 +15,7 @@ export default function Weibo() {
           <div>关键词</div>
         </div>
         {
-          isValidating ?
+          isLoading ?
             (new Array(50).fill(0)).map((_, index) => <HotSearchItemPlaceHolder key={index} />) :
             data?.data?.data.realtime.map(item => <WeiboHotSearchItem key={item.word} item={item} />)
         }
