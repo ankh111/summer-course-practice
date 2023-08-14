@@ -1,8 +1,8 @@
 import useSWR from "swr"
 import { getWeboHotSearch } from "@/service/weibo.ts"
-import HotSearchItem, { HotSearchItemPlaceHolder } from "./HotSearchItem"
+import WeiboHotSearchItem, { HotSearchItemPlaceHolder } from "./WeiboHotSearchItem"
 
-export default function WeboHotSearch() {
+export default function Weibo() {
   const { data, isLoading } = useSWR('/api/weibo', getWeboHotSearch)
 
   return (
@@ -14,7 +14,7 @@ export default function WeboHotSearch() {
       {
         isLoading ?
           (new Array(50).fill(0)).map((_, index) => <HotSearchItemPlaceHolder key={index} />) :
-          data?.data.realtime.map(item => <HotSearchItem key={item.word} item={item} />)
+          data?.data.realtime.map(item => <WeiboHotSearchItem key={item.word} item={item} />)
       }
     </div>
   )

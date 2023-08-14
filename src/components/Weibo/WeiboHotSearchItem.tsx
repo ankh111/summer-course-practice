@@ -1,7 +1,7 @@
 import { Realtime } from "@/service/weibo";
 import clsx from "clsx";
 
-export default function HotSearchItem({
+export default function WeiboHotSearchItem({
   item,
 }: {
   item: Realtime

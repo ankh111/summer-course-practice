@@ -1,7 +1,7 @@
 import { createBrowserRouter } from "react-router-dom";
 import Root from "@/routes/root";
-import WeiboHotSearch from "@/components/WeiboHotSearch";
-import BaiduHotSearch from "@/components/BaiduHotSearch";
+import Weibo from "@/components/Weibo";
+import Baidu from "@/components/Baidu";
 
 const router = createBrowserRouter([
   {
@@ -10,11 +10,11 @@ const router = createBrowserRouter([
     children: [
       {
         path: 'weibo',
-        element: <WeiboHotSearch/>,
+        element: <Weibo/>,
       },
       {
         path: 'baidu',
-        element: <BaiduHotSearch/>
+        element: <Baidu/>
       }
     ]
   },

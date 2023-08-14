@@ -2,7 +2,7 @@ import useSWR from "swr"
 import { getBaiduHotSearch } from "@/service/baidu"
 import BaiduHotSearchItem, { BaiduHotSearchItemPlaceholder } from "./BaiduHotSearchItem"
 
-export default function BaiduHotSearch() {
+export default function Baidu() {
   const { data, isLoading } = useSWR('/api/baidu', getBaiduHotSearch)
 
   return (
