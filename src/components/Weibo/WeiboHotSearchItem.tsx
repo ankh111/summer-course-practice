@@ -1,5 +1,5 @@
-import { Realtime } from "@/service/weibo";
 import clsx from "clsx";
+import { Realtime } from "../../../functions/api/weibo";
 
 export default function WeiboHotSearchItem({
   item,
