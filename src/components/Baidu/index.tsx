@@ -4,13 +4,13 @@ import BaiduHotSearchItem, { BaiduHotSearchItemPlaceholder } from "./BaiduHotSea
 import { Seo } from "../Seo"
 
 export default function Baidu() {
-  const { data, isLoading } = useSWR('/api/baidu', getBaiduHotSearch)
+  const { data, isValidating } = useSWR('/api/baidu', getBaiduHotSearch)
 
   return (
     <div>
       <Seo title="百度热搜" />
       {
-        isLoading ?
+        isValidating ?
           (new Array(30).fill(0)).map((_, index) => <BaiduHotSearchItemPlaceholder key={index} />) :
           data?.data?.cards[0].content.filter(item => !item.isTop).map(item => <BaiduHotSearchItem key={item.url} item={item}/>)
       }

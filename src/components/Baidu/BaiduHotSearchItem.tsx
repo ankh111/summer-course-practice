@@ -18,7 +18,7 @@ export default function BaiduHotSearchItem({
             borderRadius: '8px 1px 8px 1px'
           }}
           className={clsx("absolute left-0 top-0 text-center w-5 h-5 text-white", item.index === 0 && 'bg-red-500', item.index === 1 && 'bg-orange-500', item.index > 1 && 'bg-yellow-500')}
-        >{item.index}</div>
+        >{item.index + 1}</div>
       </a>
       <div className="flex-1">
         <div
