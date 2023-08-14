@@ -28,8 +28,8 @@
       ],
     },
   },
-  "include": ["src"],
-  "exclude": [
+  "include": [
+    "src",
     "functions/**/*"
   ],
   "references": [{ "path": "./tsconfig.node.json" }]

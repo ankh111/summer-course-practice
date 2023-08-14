@@ -89,7 +89,8 @@ function extractDataFromDOM(domString: string): BaiduHotSearchResult | null {
 }
 
 export async function onRequest() {
-  const data = await (await fetch('https://top.baidu.com/board?tab=realtime')).text().then(extractDataFromDOM)
+  const res = await fetch('https://top.baidu.com/board?tab=realtime')
+  const data = await res.text().then(extractDataFromDOM)
   const responseBody = {
     message: "success",
     data: {

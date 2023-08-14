@@ -1,5 +1,5 @@
-import { BaiduHotSearchContent } from "@/service/baidu";
 import clsx from "clsx";
+import { BaiduHotSearchContent } from "../../../functions/api/baidu";
 
 export default function BaiduHotSearchItem({
   item,
