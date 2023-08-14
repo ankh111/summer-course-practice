@@ -1,6 +1,6 @@
 import { request } from "./request";
 
-export interface WeiBoHotSearchResult {
+export interface WeboHotSearchResult {
   ok: number;
   data: Data;
 }
@@ -132,6 +132,6 @@ interface Mobileicon {
 interface Starname2 {
 }
 
-export async function getWeiBoHotSearch(): Promise<WeiBoHotSearchResult> {
+export async function getWeboHotSearch(): Promise<WeboHotSearchResult> {
   return (await request('https://weibo.com/ajax/side/hotSearch')).json();
 }

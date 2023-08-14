@@ -1,9 +1,9 @@
 import useSWR from "swr"
-import { getWeiBoHotSearch } from "@/service/weibo.ts"
+import { getWeboHotSearch } from "@/service/weibo.ts"
 import HotSearchItem, { HotSearchItemPlaceHolder } from "./HotSearchItem"
 
-export default function WeiBoHotSearch() {
-  const { data, isLoading } = useSWR('/api/weibo', getWeiBoHotSearch)
+export default function WeboHotSearch() {
+  const { data, isLoading } = useSWR('/api/weibo', getWeboHotSearch)
 
   return (
     <div className="flex p-6 flex-col gap-2">
