@@ -91,6 +91,9 @@ function extractDataFromDOM(domString: string): BaiduHotSearchResult | null {
 
 export async function getBaiduHotSearch() {
   return (await request('https://top.baidu.com/board?tab=realtime')).text().then((data) => {
-    return extractDataFromDOM(data)
+    return {
+      time: Date.now(),
+      data: extractDataFromDOM(data)
+    }
   })
 }

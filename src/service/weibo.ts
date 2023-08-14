@@ -132,6 +132,10 @@ interface Mobileicon {
 interface Starname2 {
 }
 
-export async function getWeboHotSearch(): Promise<WeboHotSearchResult> {
-  return (await request('https://weibo.com/ajax/side/hotSearch')).json();
+export async function getWeboHotSearch() {
+  const data:WeboHotSearchResult = await (await request('https://weibo.com/ajax/side/hotSearch')).json();
+  return {
+    time: Date.now(),
+    data,
+  }
 }
