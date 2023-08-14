@@ -67,16 +67,8 @@ export interface BaiduHotSearchContent {
 }
 
 function extractDataFromDOM(domString: string): BaiduHotSearchResult | null {
-  const div = document.createElement('div');
-  div.innerHTML = domString;
-
-  const targetDiv = div.querySelector('#sanRoot');
-  if (!targetDiv) {
-    return null;
-  }
-
   const regex = /<!--s-data:(.*?)-->/g;
-  const matches = targetDiv.innerHTML.match(regex);
+  const matches = domString.match(regex);
   const data: string[] = []
   if (matches) {
     for (const match of matches) {
